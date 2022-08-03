@@ -74,6 +74,7 @@ margin: 0;
     display: flex;
     justify-content: right;
     z-index: 10;
+    transition: .25s ease-in-out;
 }
 
 .check_form label {
@@ -85,38 +86,44 @@ margin: 0;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transition: .25s ease-in-out;
 }
 
 .check_form label span {
     background-color: var(--red);
-    height: 1px;
+    height: 2px;
     width: 70%;
     margin: 4px 0px;
     transform: rotate(0deg);
     transition: .25s ease-in-out;
-
-    &:nth-child(1) {
-        top: 12px;
-      }
-    
-    &:nth-child(2) {
-    top: 24px;
-    }  
 }
 
-.check_form label span:active {
-    &:nth-child(1) {
-        top: 14px;
-        transform: rotate(135deg);
-        transition: .25s ease-in-out;
-      }
-    
-    &:nth-child(2) {
-    top: 14px;
+.check_form.active label > :nth-child(1) {
+    margin: -1px;
+    transform: rotate(135deg);
+    transition: .25s ease-in-out;
+}
+
+.check_form.active label > :nth-child(2) {
+    margin: 0;
     transform: rotate(-135deg);
     transition: .25s ease-in-out;
-    } 
 }
+
+
+//.check_form label span:active {
+//    &:nth-child(1) {
+//        top: 14px;
+//        transform: rotate(135deg);
+//        transition: .25s ease-in-out;
+//      }
+//    
+//    &:nth-child(2) {
+//    top: 14px;
+//    transform: rotate(-135deg);
+//    transition: .25s ease-in-out;
+//    } 
+//}
 
 
 .check_form {
